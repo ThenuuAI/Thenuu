@@ -1,0 +1,72 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+-- Create a window with the desired name
+local Window = OrionLib:MakeWindow({
+    Name = "Thenuu's Library",  -- Set the GUI's name here
+    HidePremium = false,
+    SaveConfig = true,
+    ConfigFolder = "OrionTest"
+})
+
+-- Create a tab called "Universal Scripts"
+local UniversalTab = Window:MakeTab({
+    Name = "Universal Scripts",  -- Set the tab name here
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+-- Create a section inside the "Universal Scripts" tab
+local UniversalSection = UniversalTab:AddSection({
+    Name = "Scripts"
+})
+
+-- Add a button to execute the "Infinite Yield" script in the "Universal Scripts" tab
+UniversalSection:AddButton({
+    Name = "Infinite Yield",
+    Callback = function()
+        print("Infinite Yield button pressed")
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+    end
+})
+
+-- Add a button to execute the "NukeCity Gui" script in the "Universal Scripts" tab
+UniversalSection:AddButton({
+    Name = "NukeCity Gui",
+    Callback = function()
+        print("NukeCity Gui button pressed")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/NukeVsCity/TheALLHACKLoader/main/NukeLoader", true))()
+    end
+})
+
+-- Create a tab called "Blade Ball"
+local Tab = Window:MakeTab({
+    Name = "Blade Ball",  -- Set the tab name here
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+-- Create a section inside the "Blade Ball" tab
+local Section = Tab:AddSection({
+    Name = "Scripts"
+})
+
+-- Add a button to execute your "Abilitys" script in the "Blade Ball" section
+Section:AddButton({
+    Name = "Abilitys",
+    Callback = function()
+        print("Abilitys button pressed")
+        loadstring(game:HttpGet("https://github.com/SadlekAski/Scripts/raw/main/Blade%20Ball/Equip%20any%20ability.lua"))()
+    end
+})
+
+-- Add a button to execute the "Auto Parry Ring" script in the "Blade Ball" section
+Section:AddButton({
+    Name = "Auto Parry Ring",
+    Callback = function()
+        print("Auto Parry Ring button pressed")
+        -- Add the code for the "Auto Parry Ring" script here
+    end
+})
+
+-- Initialize the OrionLib interface
+OrionLib:Init()
